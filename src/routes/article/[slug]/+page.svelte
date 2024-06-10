@@ -5,6 +5,10 @@
 	import { onMount } from 'svelte';
 
 	export let data;
+
+    const images = 
+        Object.keys(import.meta.glob('$lib/Photos/**/*.jpg', { query: '?url', eager: true }))
+
     const links = [
         'Top Stories',
         'Latest News',
@@ -26,9 +30,15 @@
 	$: headline = decodeURI(data.slug);
     
 	$: article = Object.values(articles).find((a) => a.headline === headline);
+    $: if (article) {
+        article.photos = article.photos.map(p => images.find(i => i.includes(p)) ?? '')
+    }
 
     $: paragraphs = article?.contents.split('\n')
-    $: otherArticles = Object.values(articles).filter(a => a !== article)
+    $: otherArticles = Object.values(articles).filter(a => a !== article).map(a => {
+        a.photos = a.photos.map(p => images.find(i => i.includes(p)) ?? '')
+        return a
+    })
 </script>
 
 {#if article}
@@ -44,7 +54,7 @@
 			{#if article.photos}
 				<div class="scrollable">
 					{#each article.photos as photo}
-						<img src="/src/lib/Photos/{photo}" alt={photo} />
+                        <img src={photo} alt={photo} />
 					{/each}
 				</div>
 				<p class="photojourn">{typeof article.pj === 'string' ? article.pj : ('Photos by ' + article?.pj.name)}</p>
@@ -85,7 +95,7 @@
 
 				<ArticleHead
 					headline={article.headline}
-					photo="/src/lib/Photos/{article.photos[0]}"
+					photo={article.photos[0]}
 					type="Inside"
 				/>
 			</a>

@@ -4,12 +4,17 @@
 
 	const bannerArticle = articles[0];
     const stories = articles.slice(1);
+
+    const images = 
+        Object.keys(import.meta.glob('$lib/Photos/**/*.jpg', { query: '?url', eager: true }))
+
+    articles.forEach(a => a.photos = a.photos.map(src => images.find(a => a.includes(src)) ?? ''))
 </script>
 
 <div id="top-stories">
 	<ArticleHead
 		headline={bannerArticle.headline}
-		photo="/src/lib/Photos/{bannerArticle.photos[0]}"
+		photo={bannerArticle.photos[0]}
 		type="Banner"
 	/>
 </div>
@@ -20,7 +25,7 @@
 			<a class="news-article" href="/article/{encodeURI(article.headline)}">
 				<ArticleHead
 					headline={article.headline}
-					photo="/src/lib/Photos/{article.photos[0]}"
+					photo={article.photos[0]}
 					type="Inside"
 				/>
 			</a>
