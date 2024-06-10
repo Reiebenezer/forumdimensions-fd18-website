@@ -6,9 +6,6 @@
 
 	export let data;
 
-    const images = 
-        Object.keys(import.meta.glob('$lib/Photos/**/*.jpg', { query: '?url', eager: true }))
-
     const links = [
         'Top Stories',
         'Latest News',
@@ -30,15 +27,10 @@
 	$: headline = decodeURI(data.slug);
     
 	$: article = Object.values(articles).find((a) => a.headline === headline);
-    $: if (article) {
-        article.photos = article.photos.map(p => images.find(i => i.includes(p)) ?? '')
-    }
 
     $: paragraphs = article?.contents.split('\n')
-    $: otherArticles = Object.values(articles).filter(a => a !== article).map(a => {
-        a.photos = a.photos.map(p => images.find(i => i.includes(p)) ?? '')
-        return a
-    })
+    $: otherArticles = Object.values(articles).filter(a => a !== article)
+
 </script>
 
 {#if article}
@@ -53,9 +45,9 @@
 		<div class="photos">
 			{#if article.photos}
 				<div class="scrollable">
-					{#each article.photos as photo}
-                        <img src={photo} alt={photo} />
-					{/each}
+                    {#each article.photos as photo}
+                        <img src="/Photos/{photo}" alt={photo} />
+                    {/each}
 				</div>
 				<p class="photojourn">{typeof article.pj === 'string' ? article.pj : ('Photos by ' + article?.pj.name)}</p>
 			{/if}
@@ -95,7 +87,7 @@
 
 				<ArticleHead
 					headline={article.headline}
-					photo={article.photos[0]}
+					photo="/Photos/{article.photos[0]}"
 					type="Inside"
 				/>
 			</a>

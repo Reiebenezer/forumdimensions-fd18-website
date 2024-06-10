@@ -2,30 +2,37 @@
 	import ArticleHead from '$lib/article-head.svelte';
 	import articles from '$lib/articles';
 
+    
+    import bannerImage from '$lib/Photos/Banner_Story/1.jpg'
+    
+    import insideStory1 from '$lib/Photos/Inside_Story_1/1.jpg'
+    import insideStory2 from '$lib/Photos/Inside_Story_2/1.jpg'
+    import insideStory3 from '$lib/Photos/Inside_Story_3/1.jpg'
+    import insideStory4 from '$lib/Photos/Inside_Story_4/1.jpg'
+    import insideStory5 from '$lib/Photos/Inside_Story_5/1.jpg'
+    
 	const bannerArticle = articles[0];
     const stories = articles.slice(1);
 
-    const images = 
-        Object.keys(import.meta.glob('$lib/Photos/**/*.jpg', { query: '?url', eager: true }))
+    const images = [ insideStory1, insideStory2, insideStory3, insideStory4, insideStory5 ]
 
-    articles.forEach(a => a.photos = a.photos.map(src => images.find(a => a.includes(src)) ?? ''))
 </script>
 
 <div id="top-stories">
 	<ArticleHead
 		headline={bannerArticle.headline}
-		photo={bannerArticle.photos[0]}
+		photo={bannerImage}
 		type="Banner"
 	/>
 </div>
 
 <div id="latest-news">
     <h1>Latest News</h1>
-	{#each stories as article}
+	{#each stories as article, index}
 			<a class="news-article" href="/article/{encodeURI(article.headline)}">
 				<ArticleHead
 					headline={article.headline}
-					photo={article.photos[0]}
+					photo={images[index]}
 					type="Inside"
 				/>
 			</a>
