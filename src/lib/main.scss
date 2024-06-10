@@ -1,0 +1,42 @@
+:root {
+    --primary: white;
+    --secondary: #bacbf2;
+
+    --text: #252525;
+    --accent: #004eff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+@mixin font ($name, $weight, $filename) {
+    @font-face {
+        font-family: $name;
+        font-weight: $weight;
+        src: url('/src/lib/fonts/#{$name}/#{$filename}');
+    }
+}
+
+@include font('Graphik', 700, 'GraphikBold.otf');
+@include font('Graphik', 500, 'GraphikMedium.otf');
+@include font('Graphik', 300, 'GraphikLight.otf');
+
+@include font('Recoleta', 700, 'Recoleta-Bold.ttf');
+@include font('Recoleta', 500, 'Recoleta-Medium.ttf');
+@include font('Recoleta', 300, 'Recoleta-Light.ttf');
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Recoleta';
+}
+
+p, a {
+    font-family: 'Graphik';
+    font-size: 0.9rem;
+    font-weight: 300;
+
+    line-height: 1.3;
+}
