@@ -79,15 +79,15 @@ const articles: Article[] = [
                     Kilos Kabataan! was led by various progressive groups from the University including Anakbayan - WVSU, League of Filipino Students - WVSU, and Oikos Ecological Movement - WVSU.
                     `,
         photos: [
-            'Banner Story/1.jpg',
-            'Banner Story/2.jpg',
-            'Banner Story/3.jpg',
-            'Banner Story/4.jpg',
-            'Banner Story/5.jpg',
-            'Banner Story/6.jpg',
-            'Banner Story/7.jpg',
+            'Banner_Story/1.jpg',
+            'Banner_Story/2.jpg',
+            'Banner_Story/3.jpg',
+            'Banner_Story/4.jpg',
+            'Banner_Story/5.jpg',
+            'Banner_Story/6.jpg',
+            'Banner_Story/7.jpg',
         ],
-        writerphoto: ['Banner Story/writer.PNG']
+        writerphoto: ['Banner_Story/writer.PNG']
     },
     {
         type: 'InsideStory',
@@ -104,13 +104,13 @@ const articles: Article[] = [
                 Dubbed as the "home of topnotchers," CON continues to nurture young and new breeds of nurses who embody both excellence and compassion. 
         `,
         photos: [
-            'Inside Story 1/1.jpg',
-            'Inside Story 1/2.jpg',
-            'Inside Story 1/3.jpg',
-            'Inside Story 1/4.jpg',
-            'Inside Story 1/5.jpg',
+            'Inside_Story_1/1.jpg',
+            'Inside_Story_1/2.jpg',
+            'Inside_Story_1/3.jpg',
+            'Inside_Story_1/4.jpg',
+            'Inside_Story_1/5.jpg',
         ],
-        writerphoto: ['Inside Story 1/LINAS.jpg', 'Inside Story 1/BELLOSILLO.png'],
+        writerphoto: ['Inside_Story_1/LINAS.jpg', 'Inside_Story_1/BELLOSILLO.png'],
         pj: members['Delgado']
     },
     {
@@ -126,7 +126,7 @@ The competition serves as a platform for language enthusiasts to showcase their 
         date: 'June 30, 2023, 9:08 p.m.',
         headline: 'Taga-West triumphs in Korean-speaking contest, alum crowned champ',
         photos: [
-            'Inside Story 2/1.jpg',
+            'Inside_Story_2/1.jpg',
         ],
         pj: 'Photo courtesy of Korean Cultural Center in the Philippines\' Facebook page',
         type: 'InsideStory',
@@ -134,7 +134,7 @@ The competition serves as a platform for language enthusiasts to showcase their 
             members['Ruego']
         ],
         writerphoto: [
-            'Inside Story 2/RUEGO.png'
+            'Inside_Story_2/RUEGO.png'
         ]
     },
     {
@@ -150,16 +150,16 @@ The competition serves as a platform for language enthusiasts to showcase their 
         date: 'July 06, 2023, 8:57 p.m.',
         headline: 'West Crew receives NCCA award for contributions to PH dance community',
         photos: [
-            'Inside Story 3/1.jpg',
-            'Inside Story 3/2.jpg',
-            'Inside Story 3/3.jpg',
-            'Inside Story 3/4.jpg',
-            'Inside Story 3/5.jpg',
+            'Inside_Story_3/1.jpg',
+            'Inside_Story_3/2.jpg',
+            'Inside_Story_3/3.jpg',
+            'Inside_Story_3/4.jpg',
+            'Inside_Story_3/5.jpg',
         ],
         pj: 'Photos courtesy of West Crew’s Facebook page',
         type: "InsideStory",
         writer: [ members['Acepcion'] ],
-        writerphoto: [ 'Inside Story 3/ACEPCION.JPG'],
+        writerphoto: [ 'Inside_Story_3/ACEPCION.JPG'],
     },
     {
         contents: `In light of the recent network security enhancements, some students, faculty, and staff at the University are required to update their information in the Management Information Systems (MIS) Office database to be able to change their #WVSUConnects passwords.
@@ -179,12 +179,12 @@ The competition serves as a platform for language enthusiasts to showcase their 
         date: 'November 24, 2023, 9:10 a.m.',
         headline: 'Update info first to change #WVSUConnects password — MIS',
         photos: [
-            'Inside Story 4/1.jpg',
+            'Inside_Story_4/1.jpg',
         ],
         pj: 'Publication material by John Lester Trafiero',
         type: "InsideStory",
         writer: [ members['Feliciano'] ],
-        writerphoto: [ 'Inside Story 4/FELICIANO.PNG'],
+        writerphoto: [ 'Inside_Story_4/FELICIANO.PNG'],
     },
     {
         contents: `The representatives from West Visayas State University Main Campus finished as first runners-up in the Mr. and Ms. Hinampang 2023 held at Himamaylan City, November 17.
@@ -195,15 +195,15 @@ The competition serves as a platform for language enthusiasts to showcase their 
         date: 'November 20, 2023, 9:54 p.m.',
         headline: 'WVSU La Paz bets crowned as Mr. and Ms. Hinampang 2023 1st runners-up',
         photos: [
-            'Inside Story 5/1.jpg',
-            'Inside Story 5/2.jpg',
+            'Inside_Story_5/1.jpg',
+            'Inside_Story_5/2.jpg',
         ],
         pj: 'Publication material courtesy of the WVSU University Student Council',
         type: "InsideStory",
         writer: [ members['Hembra'], members['Horneja']],
         writerphoto: [ 
-            'Inside Story 5/HEMBRA.png',
-            'Inside Story 5/HORNEJA.png',
+            'Inside_Story_5/HEMBRA.png',
+            'Inside_Story_5/HORNEJA.png',
         ],
     }
 ]
