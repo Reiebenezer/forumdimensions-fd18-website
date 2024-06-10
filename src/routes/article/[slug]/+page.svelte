@@ -67,7 +67,7 @@
     <br>
     {#each article.writerphoto as photo, index}
     <div class="profile">
-        <img src="/src/lib/Photos/{photo}" alt="{article.writer[index].name}">
+        <img src="/Photos/{photo}" alt="{article.writer[index].name}">
         <span>
             <i>AUTHOR</i>
             <hr>
